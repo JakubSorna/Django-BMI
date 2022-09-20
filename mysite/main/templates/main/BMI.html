@@ -1,0 +1,20 @@
+{% extends "main/base.html" %}
+{% block content %}
+    <form method="POST">
+	{% csrf_token %}
+	<div>
+	  <input type="text" name="weight">
+	  <label >kg	weight</label>
+	</div>
+	<div>
+	  	<input type="text" name="height">
+	  	<label>cm	height</label>
+	</div>
+	<div class="input-group-prepend">
+	  	<button name="save", type="submit", class="btn btn-success">Calculate BMI</button>
+	</div>
+	<div>
+	  	<label>{{ BMI }} {{ error }}</label>
+	</div>
+</form>
+{% endblock %}
